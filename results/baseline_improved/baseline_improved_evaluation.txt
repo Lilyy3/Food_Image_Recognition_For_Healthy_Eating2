@@ -1,0 +1,111 @@
+Baseline MobileNetV2 Evaluation
+Validation Loss: 1.4714572429656982
+Validation Accuracy: 0.6195049285888672
+
+                         precision    recall  f1-score   support
+
+              apple_pie       0.39      0.22      0.28       200
+         baby_back_ribs       0.63      0.63      0.63       200
+                baklava       0.59      0.67      0.63       200
+         beef_carpaccio       0.70      0.71      0.71       200
+           beef_tartare       0.68      0.54      0.60       200
+             beet_salad       0.45      0.47      0.46       200
+               beignets       0.68      0.82      0.74       200
+               bibimbap       0.75      0.80      0.77       200
+          bread_pudding       0.36      0.28      0.32       200
+      breakfast_burrito       0.59      0.55      0.56       200
+             bruschetta       0.53      0.42      0.47       200
+           caesar_salad       0.57      0.70      0.63       200
+                cannoli       0.70      0.68      0.69       200
+          caprese_salad       0.58      0.55      0.57       200
+            carrot_cake       0.66      0.62      0.64       200
+                ceviche       0.44      0.44      0.44       200
+           cheese_plate       0.56      0.69      0.62       200
+             cheesecake       0.47      0.41      0.44       200
+          chicken_curry       0.50      0.55      0.53       200
+     chicken_quesadilla       0.63      0.59      0.61       200
+          chicken_wings       0.72      0.73      0.72       200
+         chocolate_cake       0.53      0.55      0.54       200
+       chocolate_mousse       0.32      0.35      0.33       200
+                churros       0.77      0.79      0.78       200
+           clam_chowder       0.65      0.78      0.71       200
+          club_sandwich       0.79      0.68      0.73       200
+             crab_cakes       0.51      0.35      0.41       200
+           creme_brulee       0.75      0.72      0.74       200
+          croque_madame       0.72      0.68      0.70       200
+              cup_cakes       0.70      0.72      0.71       200
+           deviled_eggs       0.77      0.69      0.73       200
+                 donuts       0.57      0.62      0.60       200
+              dumplings       0.83      0.80      0.82       200
+                edamame       0.93      0.96      0.95       200
+          eggs_benedict       0.67      0.72      0.70       200
+              escargots       0.79      0.68      0.73       200
+                falafel       0.62      0.48      0.54       200
+           filet_mignon       0.43      0.46      0.44       200
+         fish_and_chips       0.60      0.77      0.67       200
+              foie_gras       0.30      0.35      0.33       200
+           french_fries       0.77      0.83      0.80       200
+      french_onion_soup       0.68      0.72      0.70       200
+           french_toast       0.54      0.49      0.52       200
+         fried_calamari       0.67      0.61      0.64       200
+             fried_rice       0.77      0.70      0.73       200
+          frozen_yogurt       0.72      0.82      0.77       200
+           garlic_bread       0.61      0.59      0.60       200
+                gnocchi       0.41      0.55      0.47       200
+            greek_salad       0.64      0.66      0.65       200
+grilled_cheese_sandwich       0.55      0.49      0.52       200
+         grilled_salmon       0.42      0.39      0.41       200
+              guacamole       0.72      0.82      0.77       200
+                  gyoza       0.58      0.66      0.62       200
+              hamburger       0.66      0.62      0.64       200
+      hot_and_sour_soup       0.76      0.81      0.79       200
+                hot_dog       0.65      0.71      0.68       200
+       huevos_rancheros       0.42      0.43      0.42       200
+                 hummus       0.61      0.45      0.52       200
+              ice_cream       0.52      0.52      0.52       200
+                lasagna       0.55      0.46      0.50       200
+         lobster_bisque       0.66      0.75      0.70       200
+  lobster_roll_sandwich       0.72      0.69      0.71       200
+    macaroni_and_cheese       0.64      0.62      0.63       200
+               macarons       0.80      0.85      0.83       200
+              miso_soup       0.76      0.84      0.80       200
+                mussels       0.73      0.84      0.78       200
+                 nachos       0.60      0.52      0.55       200
+               omelette       0.57      0.34      0.43       200
+            onion_rings       0.72      0.81      0.76       200
+                oysters       0.75      0.84      0.80       200
+               pad_thai       0.70      0.77      0.73       200
+                 paella       0.64      0.65      0.65       200
+               pancakes       0.65      0.63      0.64       200
+            panna_cotta       0.50      0.51      0.50       200
+            peking_duck       0.50      0.69      0.58       200
+                    pho       0.69      0.83      0.76       200
+                  pizza       0.76      0.74      0.75       200
+              pork_chop       0.37      0.26      0.30       200
+                poutine       0.63      0.77      0.69       200
+              prime_rib       0.59      0.67      0.63       200
+   pulled_pork_sandwich       0.63      0.50      0.56       200
+                  ramen       0.58      0.68      0.62       200
+                ravioli       0.37      0.34      0.35       200
+        red_velvet_cake       0.84      0.68      0.75       200
+                risotto       0.47      0.55      0.51       200
+                 samosa       0.61      0.71      0.66       200
+                sashimi       0.67      0.83      0.74       200
+               scallops       0.48      0.48      0.48       200
+          seaweed_salad       0.84      0.83      0.84       200
+       shrimp_and_grits       0.50      0.40      0.44       200
+    spaghetti_bolognese       0.79      0.69      0.74       200
+    spaghetti_carbonara       0.82      0.82      0.82       200
+           spring_rolls       0.64      0.67      0.66       200
+                  steak       0.29      0.21      0.25       200
+   strawberry_shortcake       0.63      0.61      0.62       200
+                  sushi       0.67      0.54      0.60       200
+                  tacos       0.45      0.48      0.47       200
+               takoyaki       0.68      0.72      0.70       200
+               tiramisu       0.58      0.59      0.59       200
+           tuna_tartare       0.40      0.41      0.40       200
+                waffles       0.75      0.61      0.67       200
+
+               accuracy                           0.62     20200
+              macro avg       0.62      0.62      0.62     20200
+           weighted avg       0.62      0.62      0.62     20200

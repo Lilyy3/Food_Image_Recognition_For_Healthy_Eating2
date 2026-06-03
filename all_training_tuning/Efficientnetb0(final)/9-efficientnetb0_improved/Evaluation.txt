@@ -1,0 +1,1 @@
+accuracy = 0.7580, loss = 0.8853, top5_accuracy = 0.9323, val_accuracy = 0.7511 / 75.11%, val_loss = 0.9485, val_top5_accuracy = 0.9228 / 92.28%
