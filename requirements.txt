@@ -1,7 +1,18 @@
-tensorflow
-streamlit
-numpy
-pillow
-pandas
-scikit-learn
-kagglehub
+# Core ML and Deep Learning
+tensorflow>=2.10.0
+
+# Web Application Framework
+streamlit>=1.15.0
+
+# Data Processing
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Image Processing (required for error handling in image_utils.py)
+pillow>=9.2.0
+
+# Machine Learning Utilities
+scikit-learn>=1.1.0
+
+# For downloading datasets (optional)
+kagglehub>=0.1.0
