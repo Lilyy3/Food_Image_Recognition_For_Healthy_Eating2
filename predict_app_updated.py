@@ -4,6 +4,21 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 import kagglehub
+import logging
+
+# Prepare log file
+logging.basicConfig(
+    filename='app.log',
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s'
+)
+
+def log_prediction(image_name, predicted_class, confidence, success=True):
+    """Recording the details of each prediction process"""
+    if success:
+        logging.info(f"Image: {image_name} | Predicted: {predicted_class} | Confidence: {confidence:.2f}")
+    else:
+        logging.warning(f"Image: {image_name} | Prediction failed.")
 
 from nutrition_rules import get_food_result
 
@@ -51,4 +66,5 @@ print("Health Level:", result["health_level"])
 print("Health Notes:", result["health_notes"])
 print("Recommendation:", result["recommendation"])
 
-# %%
+# Recording the prediction process in the log
+log_prediction(os.path.basename(img_path), food_label, confidence)
