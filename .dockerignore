@@ -1,0 +1,8 @@
+__pycache__
+*.pyc
+*.keras
+results/
+all_training_tuning/
+.git/
+.gitattributes
+.vscode/
