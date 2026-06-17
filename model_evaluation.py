@@ -125,7 +125,7 @@ def run_sample_test():
     
     try:
        model_path = "efficientnetb0_food101_over75_best.keras"
-        if not os.path.exists(model_path):
+       if not os.path.exists(model_path):
             print(" Model file not found. Skipping sample test (this is OK in CI).")
             return  
         
