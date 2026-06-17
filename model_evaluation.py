@@ -1,11 +1,16 @@
 """
 model_evaluation.py
 Purpose: Reload saved model, evaluate metrics, generate classification report.
-"""
 Usage:
     - For CI/CD (fast test): python model_evaluation.py --test-sample
     - For full evaluation: python model_evaluation.py
 """
+
+import os
+import sys
+import kagglehub
+import tensorflow as tf
+...
 
 import os
 import sys
