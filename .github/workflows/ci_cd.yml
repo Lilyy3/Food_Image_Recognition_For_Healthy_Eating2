@@ -1,25 +1,35 @@
+# Name of the workflow as it appears in the GitHub Actions tab
 name: Food Recognition CI/CD
 
+# Trigger the workflow on every push or pull request to any branch
 on: [push, pull_request]
 
 jobs:
+  # Define the job that will run the tests and evaluation
   test-and-evaluate:
+    # Use the latest Ubuntu environment provided by GitHub
     runs-on: ubuntu-latest
+    
     steps:
+      # Step 1: Checkout the repository code
       - uses: actions/checkout@v3
+      
+      # Step 2: Set up Python environment
       - uses: actions/setup-python@v4
         with:
           python-version: '3.9'
       
-      - name: Install dependencies directly (no requirements.txt needed)
+      # Step 3: Install all required dependencies from requirements.txt
+      - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install tensorflow streamlit pandas numpy pillow scikit-learn
+          pip install -r requirements.txt
       
-      - name: Run unit tests (skip because no tests folder yet)
-        run: |
-          echo " No tests folder found, skipping unit tests for now."
+      # Step 4: Run the unit tests located in the 'tests/' folder
+      # This covers model testing and error handling validation
+      - name: Run unit tests (with error handling coverage)
+        run: python -m unittest discover tests/
       
-      - name: Evaluate model on sample data
-        run: |
-          python model_evaluation.py --test-sample
+      # Step 5: Evaluate the model on a sample dataset to ensure performance
+      - name: Evaluate model (on sample data)
+        run: python model_evaluation.py --test-sample
