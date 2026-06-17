@@ -6,8 +6,8 @@ def process_image(image_path):
     Safely process an image file with comprehensive error handling.
     
     Validates:
-    1. File existence.
-    2. File extension (only JPG, JPEG, PNG).
+    1. File extension (only JPG, JPEG, PNG).
+    2. File existence.
     3. Image integrity (not corrupted or empty).
     
     Args:
@@ -20,14 +20,14 @@ def process_image(image_path):
         FileNotFoundError: If the file does not exist at the given path.
         ValueError: If the file extension is invalid, or if the image is corrupted/empty.
     """
-    # 1. Check if the file exists
-    if not os.path.exists(image_path):
-        raise FileNotFoundError(f"File not found: {image_path}")
-    
-    # 2. Validate the file extension (allow only specific image types)
+    # 1. Validate the file extension FIRST (before checking existence)
     valid_extensions = ('.jpg', '.jpeg', '.png')
     if not image_path.lower().endswith(valid_extensions):
         raise ValueError(f"Unsupported file type. Allowed types: {', '.join(valid_extensions)}")
+    
+    # 2. Check if the file exists
+    if not os.path.exists(image_path):
+        raise FileNotFoundError(f"File not found: {image_path}")
     
     # 3. Attempt to open the image and validate its content
     try:
