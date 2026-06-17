@@ -119,26 +119,26 @@ def run_sample_test():
     """
     Lightweight test for CI/CD pipeline.
     Only checks if the model can load and produce a valid output shape.
-    No dataset downloading or heavy processing.
+    If model is missing (e.g., in CI without LFS), it passes silently.
     """
-    print(" Running SAMPLE evaluation for CI/CD...")
+    print("Running SAMPLE evaluation for CI/CD...")
     
     try:
-       model_path = "efficientnetb0_food101_over75_best.keras"
-       if not os.path.exists(model_path):
-            print(" Model file not found. Skipping sample test (this is OK in CI).")
-            return  
+        model_path = "efficientnetb0_food101_over75_best.keras"
+        if not os.path.exists(model_path):
+            print("Model file not found. Skipping sample test (this is OK in CI).")
+            return
         
         model = tf.keras.models.load_model(model_path)
-        print(" Model loaded successfully.")
+        print("Model loaded successfully.")
         
         dummy_input = np.random.rand(1, 224, 224, 3).astype(np.float32)
         output = model.predict(dummy_input)
         assert output.shape == (1, 101), f"Unexpected output shape: {output.shape}"
-        print(f" Sample test passed! Output shape: {output.shape}")
+        print(f"Sample test passed! Output shape: {output.shape}")
         
     except Exception as e:
-        print(f" Sample test warning: {e}")
+        print(f"Sample test warning: {e}")
         return
 
 #  MAIN ENTRY POINT 
