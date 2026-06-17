@@ -17,6 +17,4 @@ scikit-learn>=1.1.0
 # For downloading datasets (optional)
 kagglehub>=0.1.0
 
-fastapi>=0.95.0
-uvicorn>=0.21.0
-python-multipart>=0.0.6
+
