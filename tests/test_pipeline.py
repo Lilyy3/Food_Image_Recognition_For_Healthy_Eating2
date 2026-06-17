@@ -27,7 +27,6 @@ class TestModel(unittest.TestCase):
     
     def test_model_input_shape(self):
         """Test that the model expects the correct input shape (224x224x3)."""
-        # Skip this test if the model wasn't loaded (e.g., in CI without LFS)
         if self.model is None:
             self.skipTest("Model not available in this environment")
         self.assertEqual(self.model.input_shape, (None, 224, 224, 3))
@@ -36,22 +35,21 @@ class TestModel(unittest.TestCase):
         """Test that the model outputs predictions for exactly 101 food classes."""
         if self.model is None:
             self.skipTest("Model not available in this environment")
-        # Create random dummy data matching the input shape
         dummy_input = np.random.rand(1, 224, 224, 3)
         pred = self.model.predict(dummy_input)
         self.assertEqual(pred.shape[1], 101)  # Food101 has 101 classes
 
     def test_preprocessing_failure_file_not_found(self):
         """Test Error Handling: Ensure FileNotFoundError is raised for missing files."""
-        # Assert that trying to process a non-existent file raises an error
+        # Now the function checks extension first, so we need a valid extension for this test
         with self.assertRaises(FileNotFoundError):
-            process_image('invalid_path_12345.jpg')
-    
+            process_image("nonexistent.jpg")  # Use .jpg extension so it passes extension check
+
     def test_preprocessing_invalid_extension(self):
         """Test Error Handling: Ensure ValueError is raised for non-image file types."""
-        # Assert that processing a .txt file raises a specific error
+        # This will now raise ValueError (extension check first)
         with self.assertRaises(ValueError):
-            process_image('fake_file.txt')
+            process_image("fake_file.txt")
     
     def test_preprocessing_corrupted_image(self):
         """Test Error Handling: Ensure ValueError is raised for corrupted/empty images."""
