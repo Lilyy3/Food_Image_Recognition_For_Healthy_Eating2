@@ -1,18 +1,21 @@
-# Use official Python image
-FROM python:3.9-slim
+FROM python:3.10-slim
 
-# Set working directory inside container
-WORKDIR /app
+RUN useradd -m -u 1000 user
 
-# Copy all project files into container
-COPY . /app
+USER user
 
-# Install dependencies
-RUN pip install --upgrade pip
-RUN pip install -r requirements.txt
+ENV HOME=/home/user \
+    PATH=/home/user/.local/bin:$PATH
 
-# Expose the port that Streamlit uses (default 8501)
+WORKDIR $HOME/app
+
+COPY --chown=user requirements.txt .
+
+RUN pip install --no-cache-dir --upgrade pip
+RUN pip install --no-cache-dir --user -r requirements.txt
+
+COPY --chown=user . .
+
 EXPOSE 8501
 
-# Run the Streamlit app
-CMD ["streamlit", "run", "app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0"]
+CMD ["streamlit", "run", "app_streamlit.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.headless=true"]
