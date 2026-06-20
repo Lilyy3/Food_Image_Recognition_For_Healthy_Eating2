@@ -97,8 +97,8 @@ if uploaded_file is not None:
 
     preview_img, img_array = preprocess_uploaded_image(uploaded_file)
 
-    st.image(preview_img, caption="Uploaded Image", use_container_width=True)
-
+    #st.image(preview_img, caption="Uploaded Image", use_container_width=True)
+    st.image(preview_img, caption="Uploaded Image", use_column_width=True)
     if st.button("Predict"):
         food_label, confidence = predict_food(model, img_array, class_names)
 
