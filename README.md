@@ -1,3 +1,13 @@
+---
+title: Food Image Recognition for Healthy Eating
+emoji: 🍽️
+colorFrom: green
+colorTo: blue
+sdk: docker
+app_port: 8501
+pinned: false
+---
+
 #  Food Image Recognition for Healthy Eating
 
 A deep learning application to classify food images using **EfficientNetB0** and display nutritional information (calories, protein, fat, carbs) to promote healthy eating habits.
